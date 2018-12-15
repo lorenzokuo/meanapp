@@ -1,0 +1,18 @@
+<h4>Reviews for {{rest.name}}</h4>
+<button class="waves-effect waves-light btn #ffd54f amber lighten-2
+" [routerLink]= "['/write', rest._id]">New Review</button>
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Stars &#9733;</th> 
+    <th>Description</th>
+  </tr>
+  <tr>
+  <tr *ngFor = "let review of rest.reviews">
+    <td>{{review.name}}</td>
+    <td>{{review.stars}}</td>
+    <td>{{review.review}}</td>
+  </tr>
+</table>
+<br>
+<button class="waves-effect waves-light btn-small #80cbc4 teal lighten-3" [routerLink]="['']">Go Back</button>

@@ -1,0 +1,22 @@
+<button class="waves-effect waves-light btn #ffd54f amber lighten-2
+" [routerLink]= "['new']">New Restaurant</button>
+
+<table>
+  <tr>
+    <th>Restaurant</th>
+    <th>Cuisine</th> 
+    <th>Actions available</th>
+  </tr>
+  <tr>
+  <tr *ngFor = "let rest of rests">
+    <td>{{rest.name}}</td>
+    <td>{{rest.cuisine}}</td>
+    <td>
+      <button class="waves-effect waves-light btn-small" [routerLink]= "['reviews', rest._id]">Read reviews</button>
+      <button class="waves-effect waves-light btn-small #80cbc4 teal lighten-3
+      " [routerLink]= "['edit', rest._id]">Update</button>
+      <button class="waves-effect waves-light btn-small #e0f2f1 teal lighten-5
+      " (click)= "deleteRest(rest._id)">Delete</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,36 @@
+
+<h4>Write a review for {{rest.name}}</h4>
+<div>
+  <form (submit)="check()">
+    <h6>Your name:</h6>
+    <br>
+    <input type="text" [(ngModel)]="review.name" name="name">
+    <br>
+    <h6>Stars:&#9733;</h6>
+    <br>
+    <div input-field>
+      <select class="browser-default" [(ngModel)]="review.stars" name = "stars" material-select watch>
+        <option value=""></option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+      </select>
+      <!-- <label for="">select option</label> -->
+    </div>
+    <br>
+    <h6>Your review:</h6>
+    <input type="text" [(ngModel)]="review.review" name="review">
+    <br>
+    <div class="row">
+      <div class="col s6">
+          <button class="waves-effect waves-light btn-small #80cbc4 teal lighten-3" [routerLink]="['']">Cancel</button>
+      </div>
+      <div class="col s6">
+          <input class="waves-effect waves-light btn-small" type="submit" value="Submit">
+      </div>
+    </div>
+  </form>
+</div>
+<p *ngFor="let messages of array">{{messages}}</p>
